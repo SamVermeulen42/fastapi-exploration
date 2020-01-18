@@ -1,6 +1,6 @@
 from enum import Enum, auto
 from .database import Base
-from sqlalchemy import Column, String, Integer, Enum
+from sqlalchemy import Column, String, Integer
 
 
 class SoftwarePackage(Base):
@@ -10,3 +10,8 @@ class SoftwarePackage(Base):
     version = Column(String)
     status = Column(String)
 
+
+class APIKey(Base):
+    __tablename__ = "keys"
+    key = Column(String, primary_key=True)
+    description = Column(String)

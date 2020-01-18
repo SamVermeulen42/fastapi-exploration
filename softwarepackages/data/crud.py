@@ -3,6 +3,10 @@ from sqlalchemy.orm import Session
 from softwarepackages.data import schema, model
 
 
+def validate_api_key(db: Session, key: str):
+    return db.query(model.APIKey).filter(model.APIKey.key == key).first()
+
+
 def get_package(db: Session, name: str, version: str):
     return db.query(model.SoftwarePackage)\
         .filter(model.SoftwarePackage.name == name)\
