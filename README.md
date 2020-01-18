@@ -22,3 +22,4 @@ python setup.py sdist
 ## docker
 
 docker build . -t sam/fastapi:1.0
+docker run --env-file=.env sam/fastapi:1.0
