@@ -10,8 +10,8 @@ from fastapi.security import APIKeyHeader
 from jinja2 import Environment, BaseLoader
 
 from .data import schema, crud
-from softwarepackages.data.database import get_db
-from softwarepackages.data.schema import SoftwarePackageStatus
+from app.data.database import get_db
+from app.data.schema import SoftwarePackageStatus
 from .data.model import APIKey
 
 router = APIRouter()

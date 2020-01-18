@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from softwarepackages.data import schema, model
+from app.data import schema, model
 
 
 def validate_api_key(db: Session, key: str):
@@ -40,7 +40,7 @@ def create_package(db: Session, package: schema.SoftwarePackageBase):
 def update_package(db: Session, id: int, package: schema.SoftwarePackageBase,
                    status: schema.SoftwarePackageStatus = schema.SoftwarePackageStatus.CREATED):
     found_package = db.query(model.SoftwarePackage).filter(model.SoftwarePackage.id == id).first()
-    if found_package:
+    if found_package is None:
         return None
     found_package.update(**vars(package), **{'status': status.value})
     db.commit()

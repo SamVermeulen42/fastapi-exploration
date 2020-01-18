@@ -18,3 +18,7 @@ Other positive's that weighed in on the decision:
 ## using setuptools
 
 python setup.py sdist
+
+## docker
+
+docker build . -t sam/fastapi:1.0

@@ -1,9 +1,9 @@
 # https://fastapi.tiangolo.com/tutorial/sql-databases/
 import uvicorn
 from fastapi import FastAPI
-from softwarepackages import api
-from softwarepackages.data import model
-from softwarepackages.data.database import engine
+from app import api
+from app.data import model
+from app.data.database import engine
 
 model.Base.metadata.create_all(bind=engine)
 app = FastAPI()

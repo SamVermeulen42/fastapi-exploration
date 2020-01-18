@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-setup(name='softwarepackages',
+setup(name='app',
       version='1.0',
       description='Exploring the capabilities of FastAPI',
       author='Sam Vermeulen',
@@ -8,7 +8,7 @@ setup(name='softwarepackages',
       packages=find_packages(),
       entry_points={
           "console_scripts": [
-              "softwarepackages-server = softwarepackages:main"
+              "app-server = app:main"
           ]
       },
       test_suite='tests'
