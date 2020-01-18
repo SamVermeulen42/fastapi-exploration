@@ -4,12 +4,16 @@ from pydantic import BaseModel
 
 
 class SoftwarePackageStatus(Enum):
-    CREATED = auto()
-    DOWNLOADED = auto()
-    ACTIVE = auto()
+    CREATED = 'CREATED'
+    DOWNLOADED = 'DOWNLOADED'
+    ACTIVE = 'ACTIVE'
 
 
-class SoftwarePackage(BaseModel):
+class SoftwarePackageBase(BaseModel):
     name: str
     version: str
-    status: SoftwarePackageStatus
+
+
+class SoftwarePackage(SoftwarePackageBase):
+    id: int
+    status: str
