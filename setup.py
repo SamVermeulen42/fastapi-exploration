@@ -5,5 +5,5 @@ setup(name='softwarepackaging',
       description='Exploring the capabilities of FastAPI',
       author='Sam Vermeulen',
       author_email='sam.verm@yahoo.com',
-      packages=find_packages(where='src'),
+      packages=find_packages(),
       )
