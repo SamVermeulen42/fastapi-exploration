@@ -48,3 +48,11 @@ def update_package_status(db: Session, id: int, status: schema.SoftwarePackageSt
     db.query(model.SoftwarePackage).filter(model.SoftwarePackage.id == id).update({'status': status.value})
     db.commit()
 
+
+def deactivate_packages_by_name(db: Session, name: str):
+    db.query(model.SoftwarePackage)\
+        .filter(model.SoftwarePackage.name == name)\
+        .filter(model.SoftwarePackage.status == schema.SoftwarePackageStatus.ACTIVE.value)\
+        .update({'status': schema.SoftwarePackageStatus.DOWNLOADED.value})
+    db.commit()
+
