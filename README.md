@@ -15,3 +15,6 @@ Other positive's that weighed in on the decision:
 - AWS RDS (cloud-native) support
 - previous experiences
 
+## using setuptools
+
+python setup.py sdist

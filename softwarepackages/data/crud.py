@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from . import model, schema
+from softwarepackages.data import schema, model
 
 
 def get_package(db: Session, name: str, version: str):
