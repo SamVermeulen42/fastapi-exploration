@@ -2,9 +2,6 @@
 
 This is a project to experiment with FastAPI.
 
-Starting the webserver is currently done by running `uvicorn src.main:app --reload`.
-
-
 Python 3.7 (had issue with psycopg2 in python 3.8)
 
 ## Database
@@ -15,11 +12,7 @@ Other positive's that weighed in on the decision:
 - AWS RDS (cloud-native) support
 - previous experiences
 
-## using setuptools
-
-python setup.py sdist
-
 ## docker
 
 docker build . -t sam/fastapi:1.0
-docker run --env-file=.env sam/fastapi:1.0
+docker run -p 8000:8000 --env-file=.env sam/fastapi:1.0
